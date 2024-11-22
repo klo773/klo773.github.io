@@ -1,16 +1,18 @@
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-    
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+function changeFavicon(text) {
+  const canvas = document.createElement('canvas');
+  canvas.height = 64;
+  canvas.width = 64;
+  const ctx = canvas.getContext('2d');
+  ctx.font = '64px serif';
+  ctx.fillText(text, 0, 64);
+
+  const link = document.createElement('link');
+  const oldLinks = document.querySelectorAll('link[rel="shortcut icon"]');
+  oldLinks.forEach(e => e.parentNode.removeChild(e));
+  link.id = 'dynamic-favicon';
+  link.rel = 'shortcut icon';
+  link.href = canvas.toDataURL();
+  document.head.appendChild(link);
 }
+
+changeFavicon('❤️');
