@@ -1,18 +1,1 @@
-function changeFavicon(text) {
-  const canvas = document.createElement('canvas');
-  canvas.height = 64;
-  canvas.width = 64;
-  const ctx = canvas.getContext('2d');
-  ctx.font = '64px serif';
-  ctx.fillText(text, 0, 64);
-
-  const link = document.createElement('link');
-  const oldLinks = document.querySelectorAll('link[rel="shortcut icon"]');
-  oldLinks.forEach(e => e.parentNode.removeChild(e));
-  link.id = 'dynamic-favicon';
-  link.rel = 'shortcut icon';
-  link.href = canvas.toDataURL();
-  document.head.appendChild(link);
-}
-
-changeFavicon('❤️');
+<iframe src="https://www.google.com/search?q=%E2%80%AAGoogle%20Doodles%E2%80%AC&oi=ddle&ct=258248616&hl=en&surl=1&safe=active&ssui=on" title="description"></iframe>
